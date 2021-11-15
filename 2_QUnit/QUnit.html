@@ -1,0 +1,36 @@
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>QUnit basic example</title>
+      <link rel = "stylesheet" href = "https://code.jquery.com/qunit/qunit-1.22.0.css">
+      <script src = "https://code.jquery.com/qunit/qunit-1.22.0.js"></script>
+   </head>
+   
+   <body>
+      <div id = "qunit"></div>
+      <div id = "qunit-fixture"></div> 
+      
+      <script>
+         function square(x) {
+            return x * x;
+         }
+         QUnit.test( "TestSquare", function( assert ) {
+            var result = square(2);
+            assert.equal( result, "4", "square(2) should be 4." );
+         });
+
+         function posarReves(opcio, text) {
+            var separator = " ";
+            if(opcio == 0){
+                separator = "";
+            }
+            return text.split(separator).reverse().join(separator);
+        }
+        QUnit.test( "TestReverse", function( assert ) {
+            var result = posarReves(0,"Hola");
+            assert.equal( result, "aloH", "posarReves(\"Hola\") should be \"aloH\"." );
+         });
+
+      </script>
+   </body>
+</html>
